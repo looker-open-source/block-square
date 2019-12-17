@@ -38,6 +38,16 @@ view: order {
     sql: ${TABLE}.created_at ;;
   }
 
+  measure: avg_open {
+    label: "Average Order Open Duration"
+    type: average
+    sql: DATE_DIFF(${created_raw}, ${closed_raw}, DAY) ;;
+    filters: {
+      field: state
+      value: "last"
+    }
+  }
+
   dimension: location_id {
     type: number
     sql: ${TABLE}.location_id ;;
