@@ -44,7 +44,7 @@ view: order {
     sql: DATE_DIFF(${created_raw}, ${closed_raw}, DAY) ;;
     filters: {
       field: state
-      value: "last"
+      value: "COMPLETED"
     }
   }
 
