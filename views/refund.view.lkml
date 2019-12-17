@@ -85,6 +85,13 @@ view: refund {
     drill_fields: [detail*]
   }
 
+  measure: refunded_amount {
+    label: "Refund Total"
+    type: sum
+    sql: ${amount_money} ;;
+    drill_fields: [detail*]
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [

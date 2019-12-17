@@ -48,9 +48,4 @@ view: additional_recipient_receivable_refund {
     type: number
     sql: ${TABLE}.transaction_location_id ;;
   }
-
-  measure: count {
-    type: count
-    drill_fields: [id, refund.id]
-  }
 }
