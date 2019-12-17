@@ -4,21 +4,25 @@ view: refund {
 
   dimension: id {
     primary_key: yes
+    hidden: yes
     type: number
     sql: ${TABLE}.id ;;
   }
 
   dimension: amount_currency {
+    label: "Refund Amount Currency"
     type: number
     sql: ${TABLE}.amount_currency ;;
   }
 
   dimension: amount_money {
+    label: "Refund Amount"
     type: number
     sql: ${TABLE}.amount_money ;;
   }
 
   dimension_group: created {
+    label: "Refund Created At"
     type: time
     timeframes: [
       raw,
@@ -34,44 +38,49 @@ view: refund {
   }
 
   dimension: location_id {
+    label: "Refund Location ID"
     type: number
     sql: ${TABLE}.location_id ;;
   }
 
   dimension: order_id {
     type: number
-    # hidden: yes
+    hidden: yes
     sql: ${TABLE}.order_id ;;
   }
 
   dimension: processing_fee_money {
+    label: "Refund Processing Fee"
     type: number
     sql: ${TABLE}.processing_fee_money ;;
   }
 
   dimension: reason {
+    label: "Refund Reason"
     type: string
     sql: ${TABLE}.reason ;;
   }
 
   dimension: status {
+    label: "Refund Status"
     type: yesno
     sql: ${TABLE}.status ;;
   }
 
   dimension: tender_id {
     type: number
-    # hidden: yes
+    hidden: yes
     sql: ${TABLE}.tender_id ;;
   }
 
   dimension: transaction_id {
     type: number
-    # hidden: yes
+    hidden: yes
     sql: ${TABLE}.transaction_id ;;
   }
 
   measure: count {
+    label: "Refund Count"
     type: count
     drill_fields: [detail*]
   }

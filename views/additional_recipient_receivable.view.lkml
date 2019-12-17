@@ -4,16 +4,19 @@ view: additional_recipient_receivable {
 
   dimension: id {
     primary_key: yes
+    hidden: yes
     type: number
     sql: ${TABLE}.id ;;
   }
 
   dimension: amount_money {
+    label: "Additional Receivable Amount"
     type: number
     sql: ${TABLE}.amount_money ;;
   }
 
   dimension_group: created {
+    label: "Additional Receivable Created At"
     type: time
     timeframes: [
       raw,
@@ -30,17 +33,14 @@ view: additional_recipient_receivable {
 
   dimension: transaction_id {
     type: number
-    # hidden: yes
+    hidden: yes
     sql: ${TABLE}.transaction_id ;;
   }
 
   dimension: transaction_location_id {
     type: number
+    hidden: yes
     sql: ${TABLE}.transaction_location_id ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id, transaction.id]
-  }
 }

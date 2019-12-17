@@ -1,6 +1,12 @@
 view: customer_card {
   sql_table_name: Square.CUSTOMER_CARD ;;
 
+  dimension: pk {
+    hidden: yes
+    primary_key: yes
+    sql: CONCAT(${card_id}, ${customer_id}) ;;
+  }
+
   dimension: card_id {
     type: number
     # hidden: yes

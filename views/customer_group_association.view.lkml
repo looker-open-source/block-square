@@ -1,6 +1,12 @@
 view: customer_group_association {
   sql_table_name: Square.CUSTOMER_GROUP_ASSOCIATION ;;
 
+  dimension: pk {
+    hidden: yes
+    primary_key: yes
+    sql: CONCAT(${customer_id}, ${group_id}) ;;
+  }
+
   dimension: customer_id {
     type: number
     # hidden: yes

@@ -1,6 +1,12 @@
 view: catalog_modifier_in_catalog_modifier_list {
   sql_table_name: Square.CATALOG_MODIFIER_IN_CATALOG_MODIFIER_LIST ;;
 
+  dimension: pk {
+    hidden: yes
+    primary_key: yes
+    sql: CONCAT(${catalog_modifier_list_id}, ${catalog_modifier}) ;;
+  }
+
   dimension: catalog_modifier {
     type: string
     sql: ${TABLE}.catalog_modifier ;;

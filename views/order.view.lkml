@@ -74,21 +74,25 @@ view: order {
   }
 
   dimension: total_discount_money {
+    label: "Order Total Discount"
     type: number
     sql: ${TABLE}.total_discount_money ;;
   }
 
   dimension: total_money {
+    label: "Order Total Money"
     type: number
     sql: ${TABLE}.total_money ;;
   }
 
   dimension: total_service_charge_money {
+    label: "Order Total Service Charge"
     type: number
     sql: ${TABLE}.total_service_charge_money ;;
   }
 
   dimension: total_tax_money {
+    label: "Order Total Tax"
     type: number
     sql: ${TABLE}.total_tax_money ;;
   }
@@ -110,6 +114,30 @@ view: order {
 
   measure: count {
     type: count
+    drill_fields: [detail*]
+  }
+
+  measure: revenue {
+    type: sum
+    sql: ${total_money} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: total_discount {
+    type: sum
+    sql: ${total_discount_money} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: total_service_charge {
+    type: sum
+    sql: ${total_service_charge_money} ;;
+    drill_fields: [detail*]
+  }
+
+  measure: total_tax {
+    type: sum
+    sql: ${total_tax_money} ;;
     drill_fields: [detail*]
   }
 

@@ -5,10 +5,12 @@ view: card {
   dimension: id {
     primary_key: yes
     type: number
+    hidden: yes
     sql: ${TABLE}.id ;;
   }
 
   dimension: billing_address {
+    label: "Card Billing Address"
     type: string
     sql: ${TABLE}.billing_address ;;
   }
@@ -24,27 +26,27 @@ view: card {
   }
 
   dimension: exp_month {
+    label: "Card Exp Month"
     type: string
     sql: ${TABLE}.exp_month ;;
   }
 
   dimension: exp_year {
+    label: "Card Exp Year"
     type: number
     sql: ${TABLE}.exp_year ;;
   }
 
   dimension: fingerprint {
+    label: "Card Fingerprint"
     type: string
     sql: ${TABLE}.fingerprint ;;
   }
 
   dimension: last_4 {
+    label: "Card Last 4"
     type: number
     sql: ${TABLE}.last_4 ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id, cardholder_name, customer_card.count]
-  }
 }

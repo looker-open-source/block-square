@@ -4,17 +4,15 @@ view: customer_group_info {
 
   dimension: id {
     primary_key: yes
+    hidden: yes
     type: number
     sql: ${TABLE}.id ;;
   }
 
   dimension: name {
+    label: "Group Name"
     type: string
     sql: ${TABLE}.name ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id, name]
-  }
 }

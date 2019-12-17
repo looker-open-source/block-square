@@ -9,6 +9,7 @@ view: employee {
   }
 
   dimension_group: created {
+    label: "Employee Created At"
     type: time
     timeframes: [
       raw,
@@ -24,21 +25,25 @@ view: employee {
   }
 
   dimension: first_name {
+    label: "Employee First Name"
     type: string
     sql: ${TABLE}.first_name ;;
   }
 
   dimension: last_name {
+    label: "Employee Last Name"
     type: string
     sql: ${TABLE}.last_name ;;
   }
 
   dimension: status {
+    label: "Employee Status"
     type: yesno
     sql: ${TABLE}.status ;;
   }
 
   dimension_group: updated {
+    label: "Employee Updated At"
     type: time
     timeframes: [
       raw,
@@ -54,6 +59,7 @@ view: employee {
   }
 
   measure: count {
+    label: "Employee Count"
     type: count
     drill_fields: [id, last_name, first_name, employee_wage.count, employee_location.count]
   }

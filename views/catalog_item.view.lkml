@@ -23,11 +23,13 @@ view: catalog_item {
 
   dimension: catalog_object_id {
     type: number
-    # hidden: yes
+    hidden: yes
+    primary_key: yes
     sql: ${TABLE}.catalog_object_id ;;
   }
 
   dimension: category_id {
+    hidden: yes
     type: number
     sql: ${TABLE}.category_id ;;
   }
@@ -63,6 +65,7 @@ view: catalog_item {
   }
 
   measure: count {
+    label: "Item Count"
     type: count
     drill_fields: [name, catalog_object.id]
   }
