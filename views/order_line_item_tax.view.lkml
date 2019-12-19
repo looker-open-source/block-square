@@ -4,7 +4,7 @@ view: order_line_item_tax {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${uid}, ${order_id}) ;;
+    sql: CONCAT(CAST(${uid} AS STRING), CAST(${order_id} AS STRING)) ;;
   }
 
   dimension: applied_money {
@@ -56,8 +56,4 @@ view: order_line_item_tax {
     sql: ${TABLE}.uid ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [name, catalog_object.id, order.order_source_name, order.id]
-  }
 }

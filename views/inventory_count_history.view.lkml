@@ -4,7 +4,7 @@ view: inventory_count_history {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${catalog_object_id}, ${location_id}, ${calculated_raw}) ;;
+    sql: CONCAT(CAST(${catalog_object_id} AS STRING), CAST(${location_id} AS STRING), CAST(${calculated_raw} AS STRING)) ;;
   }
 
   dimension_group: calculated {
@@ -51,5 +51,11 @@ view: inventory_count_history {
     label: "History State"
     type: string
     sql: ${TABLE}.state ;;
+  }
+
+  measure: total_quantity {
+    label: "History Quantity"
+    type: sum
+    sql: ${quantity} ;;
   }
 }

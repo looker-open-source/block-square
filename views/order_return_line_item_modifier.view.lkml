@@ -4,7 +4,7 @@ view: order_return_line_item_modifier {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${uid}, ${order_return_line_item_id}) ;;
+    sql: CONCAT(CAST(${uid} AS STRING), CAST(${order_return_line_item_id} AS STRING)) ;;
   }
 
   dimension: base_price_money {
