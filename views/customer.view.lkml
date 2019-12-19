@@ -108,6 +108,7 @@ view: customer {
     sql: ${TABLE}.updated_at ;;
   }
 
+
   measure: count {
     type: count
     drill_fields: [detail*]

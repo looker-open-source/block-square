@@ -30,6 +30,8 @@ view: order {
       date,
       week,
       month,
+      day_of_week,
+      hour_of_day,
       quarter,
       year
     ]
@@ -151,6 +153,11 @@ view: order {
     drill_fields: [detail*]
   }
 
+  dimension: customer_age {
+    type: number
+    sql: DATEDIFF() ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
@@ -165,4 +172,5 @@ view: order {
       order_fulfillment.count
     ]
   }
+
 }
