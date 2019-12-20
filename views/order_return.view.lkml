@@ -4,7 +4,7 @@ view: order_return {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${uid}, ${source_order_id}) ;;
+    sql: CONCAT(CAST(${uid} AS STRING), CAST(${source_order_id} AS STRING)) ;;
   }
 
   dimension: source_order_id {

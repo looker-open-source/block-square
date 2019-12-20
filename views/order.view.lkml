@@ -36,12 +36,24 @@ view: order {
       date,
       week,
       month,
+      day_of_week,
+      hour_of_day,
       quarter,
       year
     ]
     convert_tz: no
     datatype: date
     sql: ${TABLE}.created_at ;;
+  }
+
+  measure: avg_open {
+    label: "Average Order Open Duration"
+    type: average
+    sql: DATE_DIFF(${created_raw}, ${closed_raw}, DAY) ;;
+    filters: {
+      field: state
+      value: "COMPLETED"
+    }
   }
 
   dimension: location_id {
@@ -148,6 +160,11 @@ view: order {
     drill_fields: [detail*]
   }
 
+  dimension: customer_age {
+    type: number
+    sql: DATEDIFF() ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
@@ -163,4 +180,5 @@ view: order {
       order_fulfillment.count
     ]
   }
+
 }

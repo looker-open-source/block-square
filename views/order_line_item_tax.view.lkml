@@ -56,8 +56,4 @@ view: order_line_item_tax {
     sql: ${TABLE}.uid ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [name, catalog_object.id, order.order_source_name, order.id]
-  }
 }

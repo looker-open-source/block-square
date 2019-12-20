@@ -31,8 +31,4 @@ view: catalog_item_modifier_override {
     sql: ${TABLE}.on_by_default ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: []
-  }
 }
