@@ -4,7 +4,7 @@ view: order_line_item {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${uid}, ${order_id}) ;;
+    sql: CONCAT(CAST(${uid} AS STRING), CAST(${order_id} AS STRING)) ;;
   }
 
   dimension: base_price_money {

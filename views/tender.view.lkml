@@ -62,6 +62,9 @@ view: tender {
     type: time
     timeframes: [
       raw,
+      time_of_day,
+      hour_of_day,
+      day_of_week,
       date,
       week,
       month,
