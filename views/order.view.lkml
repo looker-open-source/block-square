@@ -31,8 +31,6 @@ view: order {
     timeframes: [
       raw,
       time_of_day,
-      hour_of_day,
-      day_of_week,
       date,
       week,
       month,
@@ -138,6 +136,14 @@ view: order {
   measure: revenue {
     type: sum
     sql: ${total_money} ;;
+    drill_fields: [detail*]
+    value_format_name: decimal_2
+  }
+
+  measure: net_sales {
+    type: number
+    sql: ${revenue} - (${order_return_line_item.total_return_amount} + ${total_discount}) ;;
+    description: "Orders Revenue less Returns, Discounts and Comps"
     drill_fields: [detail*]
     value_format_name: decimal_2
   }
