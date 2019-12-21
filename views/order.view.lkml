@@ -177,11 +177,6 @@ view: order {
     value_format_name: decimal_2
   }
 
-  dimension: customer_age {
-    type: number
-    sql: DATEDIFF() ;;
-  }
-
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
