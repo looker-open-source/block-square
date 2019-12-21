@@ -108,6 +108,11 @@ view: customer {
     sql: ${TABLE}.updated_at ;;
   }
 
+  dimension: cohort_age {
+    type: number
+    sql: DATE_DIFF(${created_date}, CURRENT_DATE(), MONTH) ;;
+  }
+
 
   measure: count {
     type: count

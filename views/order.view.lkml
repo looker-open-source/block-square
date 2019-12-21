@@ -153,11 +153,6 @@ view: order {
     drill_fields: [detail*]
   }
 
-  dimension: customer_age {
-    type: number
-    sql: DATEDIFF() ;;
-  }
-
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
