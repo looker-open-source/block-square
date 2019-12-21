@@ -114,10 +114,12 @@ view: customer {
     sql: ${TABLE}.updated_at ;;
   }
 
-  dimension: cohort_age {
-    type: number
-    sql: DATE_DIFF(${created_date}, CURRENT_DATE(), MONTH) ;;
-  }
+    dimension_group: cohort_age {
+      type: duration
+      sql_start: CAST(${created_raw} AS TIMESTAMP) ;;  # often this is a single database column
+      sql_end: CURRENT_TIMESTAMP() ;;  # often this is a single database column
+      intervals: [month, year] # valid intervals described below
+    }
 
 
   measure: count {

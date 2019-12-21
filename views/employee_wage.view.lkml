@@ -5,7 +5,7 @@ view: employee_wage {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${id}, ${employee_id}) ;;
+    sql: CONCAT(CAST(${id} AS STRING), CAST(${employee_id} AS STRING)) ;;
   }
 
   dimension: id {
