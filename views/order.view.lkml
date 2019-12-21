@@ -12,6 +12,9 @@ view: order {
     type: time
     timeframes: [
       raw,
+      time_of_day,
+      hour_of_day,
+      day_of_week,
       date,
       week,
       month,
@@ -27,6 +30,7 @@ view: order {
     type: time
     timeframes: [
       raw,
+      time_of_day,
       date,
       week,
       month,
@@ -133,6 +137,15 @@ view: order {
     type: sum
     sql: ${total_money} ;;
     drill_fields: [detail*]
+    value_format_name: decimal_2
+  }
+
+  measure: net_sales {
+    type: number
+    sql: ${revenue} - (${order_return_line_item.total_return_amount} + ${total_discount}) ;;
+    description: "Orders Revenue less Returns, Discounts and Comps"
+    drill_fields: [detail*]
+    value_format_name: decimal_2
   }
 
   measure: total_discount {
@@ -159,6 +172,7 @@ view: order {
       id,
       order_source_name,
       transaction.count,
+      order.total_money,
       order_service_charge.count,
       tender.count,
       order_line_item_tax.count,
