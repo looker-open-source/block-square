@@ -4,7 +4,7 @@ view: catalog_item_modifier_list_info {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${catalog_item_id}, ${modifier_list_id}) ;;
+    sql: CONCAT(CAST(${catalog_item_id} AS STRING), CAST(${modifier_list_id} AS STRING)) ;;
   }
 
   dimension: catalog_item_id {

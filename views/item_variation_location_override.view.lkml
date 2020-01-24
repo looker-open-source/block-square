@@ -4,7 +4,7 @@ view: item_variation_location_override {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${item_id}, ${location_id}, ${item_name}) ;;
+    sql: CONCAT(CAST(${item_id} AS STRING), CAST(${location_id} AS STRING), CAST(${item_name} AS STRING)) ;;
   }
 
   dimension: inventory_alert_threshold {

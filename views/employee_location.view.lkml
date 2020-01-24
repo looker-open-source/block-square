@@ -4,7 +4,7 @@ view: employee_location {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${employee_id}, ${location_id}) ;;
+    sql: CONCAT(CAST(${employee_id} AS STRING), CAST(${location_id} AS STRING)) ;;
   }
 
   dimension: employee_id {

@@ -4,7 +4,7 @@ view: catalog_item_variation {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${item_id}, ${name}) ;;
+    sql: CONCAT(CAST(${item_id} AS STRING), CAST(${name} AS STRING)) ;;
   }
 
   dimension: inventory_alert_threshold {

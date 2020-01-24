@@ -4,7 +4,7 @@ view: tender_additional_recipient {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${receivable_id}, ${tender_id}) ;;
+    sql: CONCAT(CAST(${receivable_id} AS STRING), CAST(${tender_id} AS STRING)) ;;
   }
 
   dimension: amount_money {

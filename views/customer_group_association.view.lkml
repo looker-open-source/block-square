@@ -4,7 +4,7 @@ view: customer_group_association {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${customer_id}, ${group_id}) ;;
+    sql: CONCAT(CAST(${customer_id} AS STRING), CAST(${group_id} AS STRING)) ;;
   }
 
   dimension: customer_id {

@@ -4,7 +4,7 @@ view: catalog_item_tax {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${catalog_item_id}, ${tax_id}) ;;
+    sql: CONCAT(CAST(${catalog_item_id} AS STRING), CAST(${tax_id} AS STRING)) ;;
   }
 
   dimension: catalog_item_id {

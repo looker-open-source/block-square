@@ -12,6 +12,9 @@ view: order {
     type: time
     timeframes: [
       raw,
+      time_of_day,
+      hour_of_day,
+      day_of_week,
       date,
       week,
       month,
@@ -27,6 +30,7 @@ view: order {
     type: time
     timeframes: [
       raw,
+      time_of_day,
       date,
       week,
       month,
@@ -133,29 +137,44 @@ view: order {
     type: sum
     sql: ${total_money} ;;
     drill_fields: [detail*]
+    value_format_name: decimal_2
   }
 
   measure: total_discount {
     type: sum
     sql: ${total_discount_money} ;;
     drill_fields: [detail*]
+    value_format_name: decimal_2
   }
 
   measure: total_service_charge {
     type: sum
     sql: ${total_service_charge_money} ;;
     drill_fields: [detail*]
+    value_format_name: decimal_2
   }
 
   measure: total_tax {
     type: sum
     sql: ${total_tax_money} ;;
     drill_fields: [detail*]
+    value_format_name: decimal_2
   }
 
-  dimension: customer_age {
+  measure: net_sales {
     type: number
-    sql: DATEDIFF() ;;
+    sql: ${revenue} - (${order_return_line_item.total_return_amount} + ${total_discount}) ;;
+    description: "Orders Revenue less Returns, Discounts and Comps"
+    drill_fields: [detail*]
+    value_format_name: decimal_2
+  }
+
+  measure: total_sales {
+    type: number
+    sql: (${net_sales} + ${tender.total_tips}) - ${total_tax} ;;
+    description: "Net Sales & Tips less Taxes"
+    drill_fields: [detail*]
+    value_format_name: decimal_2
   }
 
   # ----- Sets of fields for drilling ------
@@ -164,6 +183,7 @@ view: order {
       id,
       order_source_name,
       transaction.count,
+      order.total_money,
       order_service_charge.count,
       tender.count,
       order_line_item_tax.count,
