@@ -4,7 +4,7 @@ view: catalog_location {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${catalog_object_id}, ${location_id}) ;;
+    sql: CONCAT(CAST(${catalog_object_id} AS STRING), CAST(${location_id} AS STRING)) ;;
   }
 
   dimension: absent {

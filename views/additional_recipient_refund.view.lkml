@@ -4,7 +4,7 @@ view: additional_recipient_refund {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${refund_id}, ${index}) ;;
+    sql: CONCAT(CAST(${refund_id} AS STRING), CAST(${index} AS STRING)) ;;
   }
 
   dimension: amount_money {

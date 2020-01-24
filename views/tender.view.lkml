@@ -13,6 +13,7 @@ view: tender {
     label: "Tender Amount"
     type: number
     sql: ${TABLE}.amount_money ;;
+    value_format_name: decimal_2
   }
 
   dimension: card_details_card_brand {
@@ -62,6 +63,9 @@ view: tender {
     type: time
     timeframes: [
       raw,
+      time_of_day,
+      hour_of_day,
+      day_of_week,
       date,
       week,
       month,
@@ -98,15 +102,18 @@ view: tender {
   }
 
   dimension: processing_fee_money {
-    label: "Tender Processing Fee"
+    label: "Square Processing Fee"
+    description: "The amount of any Square processing fees applied to the tender. This field is not immediately populated when a new transaction is created. It is usually available after about ten seconds."
     type: number
     sql: ${TABLE}.processing_fee_money ;;
+    value_format_name: decimal_2
   }
 
   dimension: tip_money {
     label: "Tender Tip Amount"
     type: number
     sql: ${TABLE}.tip_money ;;
+    value_format_name: decimal_2
   }
 
   dimension: transaction_id {
@@ -124,16 +131,25 @@ view: tender {
   measure: revenue {
     type: sum
     sql: ${amount_money} ;;
+    value_format_name: decimal_2
   }
 
   measure: total_tips {
     type: sum
     sql: ${tip_money} ;;
+    value_format_name: decimal_2
   }
 
   measure: total_cash_back {
     type: sum
     sql: ${cash_details_change_back_money} ;;
+    value_format_name: decimal_2
+  }
+
+  measure: total_processing_fee {
+    type: sum
+    sql: ${processing_fee_money} ;;
+    value_format_name: decimal_2
   }
 
   # ----- Sets of fields for drilling ------

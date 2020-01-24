@@ -5,7 +5,7 @@ view: break_type {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${id}, ${location_id}) ;;
+    sql: CONCAT(CAST(${id} AS STRING), CAST(${location_id} AS STRING)) ;;
   }
 
   dimension: id {

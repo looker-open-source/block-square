@@ -4,7 +4,7 @@ view: customer_card {
   dimension: pk {
     hidden: yes
     primary_key: yes
-    sql: CONCAT(${card_id}, ${customer_id}) ;;
+    sql: CONCAT(CAST(${card_id} AS STRING), CAST(${customer_id} AS STRING)) ;;
   }
 
   dimension: card_id {

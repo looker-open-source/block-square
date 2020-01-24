@@ -17,6 +17,9 @@ view: customer {
     type: time
     timeframes: [
       raw,
+      time_of_day,
+      hour_of_day,
+      day_of_week,
       date,
       week,
       month,
@@ -37,6 +40,9 @@ view: customer {
     type: time
     timeframes: [
       raw,
+      time_of_day,
+      hour_of_day,
+      day_of_week,
       date,
       week,
       month,
@@ -107,6 +113,13 @@ view: customer {
     datatype: date
     sql: ${TABLE}.updated_at ;;
   }
+
+    dimension_group: cohort_age {
+      type: duration
+      sql_start: CAST(${created_raw} AS TIMESTAMP) ;;  # often this is a single database column
+      sql_end: CURRENT_TIMESTAMP() ;;  # often this is a single database column
+      intervals: [month, year] # valid intervals described below
+    }
 
 
   measure: count {

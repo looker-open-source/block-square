@@ -110,8 +110,8 @@ view: order_return_line_item {
     sql: ${total_discount_money} ;;
   }
 
-  measure: total_revenue {
-    label: "Return Revenue"
+  measure: total_return_amount {
+    label: "Return Amount Total"
     type: sum
     sql: ${total_money} ;;
   }

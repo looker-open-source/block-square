@@ -13,16 +13,6 @@ view: location {
     sql: ${TABLE}.address ;;
   }
 
-  dimension: us_state {
-    type: string
-    sql: SUBSTR(${address}, LENGTH(${address})-7, 2) ;;
-  }
-
-  dimension: zipcode {
-    type: zipcode
-    sql: SUBSTR(${address}, LENGTH(${address})-5, 6) ;;
-  }
-
   dimension: business_name {
     type: string
     sql: ${TABLE}.business_name ;;
