@@ -38,7 +38,7 @@ view: order_line_item_tax {
     label: "Tax Percentage"
     type: number
     sql: ${TABLE}.percentage ;;
-    description: "The percentage of the tax, as a string representation of a decimal number. For example, a value of "7.25" corresponds to a percentage of 7.25%."
+    description: "The percentage of the tax, as a string representation of a decimal number. For example, a value of \"7.25\" corresponds to a percentage of 7.25%."
   }
 
   dimension: scope {

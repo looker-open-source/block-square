@@ -46,7 +46,7 @@ view: break_type {
     label: "Break Version"
     type: number
     sql: ${TABLE}.version ;;
-    description: "Used for resolving concurrency issues; request will fail if version provided does not match server version at time of request. If a value is not provided, Square's servers execute a "blind" write; potentially  overwriting another writer's data."
+    description: "Used for resolving concurrency issues; request will fail if version provided does not match server version at time of request. If a value is not provided, Square's servers execute a \"blind\" write; potentially  overwriting another writer's data."
   }
 
   dimension_group: created {

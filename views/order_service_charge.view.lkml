@@ -51,7 +51,7 @@ view: order_service_charge {
     label: "Service Charge Percentage"
     type: number
     sql: ${TABLE}.percentage ;;
-    description: "The service charge percentage as a string representation of a decimal number. For example, "7.25" indicates a service charge of 7.25%."
+    description: "The service charge percentage as a string representation of a decimal number. For example, \"7.25\" indicates a service charge of 7.25%."
   }
 
   dimension: taxable {

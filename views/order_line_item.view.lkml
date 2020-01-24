@@ -51,7 +51,7 @@ view: order_line_item {
     label: "Line Item Quantity"
     type: number
     sql: ${TABLE}.quantity ;;
-    description: "The quantity purchased, formatted as a decimal number. For example: "3"."
+    description: "The quantity purchased, formatted as a decimal number. For example: \"3\"."
   }
 
   dimension: total_discount_money {

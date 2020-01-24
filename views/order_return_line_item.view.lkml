@@ -51,7 +51,7 @@ view: order_return_line_item {
     label: "Return Quantity"
     type: number
     sql: ${TABLE}.quantity ;;
-    description: "The quantity returned, formatted as a decimal number. For example: "3"."
+    description: "The quantity returned, formatted as a decimal number. For example: \"3\"."
   }
 
   dimension: quantity_unit {
