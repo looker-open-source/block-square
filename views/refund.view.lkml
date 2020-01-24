@@ -7,6 +7,7 @@ view: refund {
     hidden: yes
     type: number
     sql: ${TABLE}.id ;;
+    description: "The refund's unique ID."
   }
 
   dimension: amount_currency {
@@ -19,6 +20,55 @@ view: refund {
     label: "Refund Amount"
     type: number
     sql: ${TABLE}.amount_money ;;
+    description: "The amount of money refunded to the buyer."
+  }
+
+  dimension: location_id {
+    label: "Refund Location ID"
+    type: number
+    sql: ${TABLE}.location_id ;;
+    description: "The ID of the refund's associated location."
+  }
+
+  dimension: order_id {
+    type: number
+    hidden: yes
+    sql: ${TABLE}.order_id ;;
+  }
+
+  dimension: processing_fee_money {
+    label: "Refund Processing Fee"
+    type: number
+    sql: ${TABLE}.processing_fee_money ;;
+    description: "The amount of Square processing fee money refunded to the merchant."
+  }
+
+  dimension: reason {
+    label: "Refund Reason"
+    type: string
+    sql: ${TABLE}.reason ;;
+    description: "The reason for the refund being issued."
+  }
+
+  dimension: status {
+    label: "Refund Status"
+    type: yesno
+    sql: ${TABLE}.status ;;
+    description: "The current status of the refund (PENDING, APPROVED, REJECTED, or FAILED)."
+  }
+
+  dimension: tender_id {
+    type: number
+    hidden: yes
+    sql: ${TABLE}.tender_id ;;
+    description: "The ID of the refunded tender."
+  }
+
+  dimension: transaction_id {
+    type: number
+    hidden: yes
+    sql: ${TABLE}.transaction_id ;;
+    description: "The ID of the transaction that the refunded tender is part of."
   }
 
   dimension_group: created {
@@ -40,48 +90,6 @@ view: refund {
     sql: ${TABLE}.created_at ;;
   }
 
-  dimension: location_id {
-    label: "Refund Location ID"
-    type: number
-    sql: ${TABLE}.location_id ;;
-  }
-
-  dimension: order_id {
-    type: number
-    hidden: yes
-    sql: ${TABLE}.order_id ;;
-  }
-
-  dimension: processing_fee_money {
-    label: "Refund Processing Fee"
-    type: number
-    sql: ${TABLE}.processing_fee_money ;;
-  }
-
-  dimension: reason {
-    label: "Refund Reason"
-    type: string
-    sql: ${TABLE}.reason ;;
-  }
-
-  dimension: status {
-    label: "Refund Status"
-    type: yesno
-    sql: ${TABLE}.status ;;
-  }
-
-  dimension: tender_id {
-    type: number
-    hidden: yes
-    sql: ${TABLE}.tender_id ;;
-  }
-
-  dimension: transaction_id {
-    type: number
-    hidden: yes
-    sql: ${TABLE}.transaction_id ;;
-  }
-
   measure: count {
     label: "Refund Count"
     type: count
@@ -95,7 +103,6 @@ view: refund {
     drill_fields: [detail*]
   }
 
-  # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
       id,

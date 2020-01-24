@@ -17,24 +17,27 @@ view: catalog_item_modifier_list_info {
     label: "Modifier Enabled?"
     type: yesno
     sql: ${TABLE}.enabled ;;
+    description: "If true, enable this CatalogModifierList."
   }
 
   dimension: max_selected_modifiers {
     label: "Modifier Max Modifiers"
     type: number
     sql: ${TABLE}.max_selected_modifiers ;;
+    description: "If 0 or larger, the largest number of CatalogModifiers that can be selected from this CatalogModifierList."
   }
 
   dimension: min_selected_modifiers {
     label: "Modifier Min Modifiers"
     type: number
     sql: ${TABLE}.min_selected_modifiers ;;
+    description: "If 0 or larger, the smallest number of CatalogModifiers that must be selected from this CatalogModifierList."
   }
 
   dimension: modifier_list_id {
     type: number
     hidden: yes
     sql: ${TABLE}.modifier_list_id ;;
+    description: "The ID of the CatalogModifierList controlled by this CatalogModifierListInfo."
   }
-
 }

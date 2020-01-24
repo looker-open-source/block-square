@@ -23,18 +23,21 @@ view: order_fulfillment {
     label: "Fulfillment Pickup Details"
     type: string
     sql: ${TABLE}.pickup_details ;;
+    description: "Contains details for a pickup fulfillment. Required when fulfillment type is PICKUP."
   }
 
   dimension: state {
     label: "Fulfillment State"
     type: string
     sql: ${TABLE}.state ;;
+    description: "The state of the fulfillment."
   }
 
   dimension: type {
     label: "Fulfillment Type"
     type: string
     sql: ${TABLE}.type ;;
+    description: "The type of the fulfillment."
   }
 
   dimension: uid {
@@ -42,6 +45,7 @@ view: order_fulfillment {
     hidden: yes
     value_format_name: id
     sql: ${TABLE}.uid ;;
+    description: "Unique ID that identifies the fulfillment only within this order."
   }
 
   measure: fulfillment_count {

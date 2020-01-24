@@ -30,5 +30,4 @@ view: catalog_item_modifier_override {
     type: yesno
     sql: ${TABLE}.on_by_default ;;
   }
-
 }

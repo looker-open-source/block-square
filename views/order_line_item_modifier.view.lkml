@@ -11,18 +11,21 @@ view: order_line_item_modifier {
     label: "Modifier Base Price Money"
     type: number
     sql: ${TABLE}.base_price_money ;;
+    description: "The base price for the modifier."
   }
 
   dimension: catalog_object_id {
     type: number
     hidden: yes
     sql: ${TABLE}.catalog_object_id ;;
+    description: "The catalog object id referencing CatalogModifier."
   }
 
   dimension: name {
     label: "Modifier Name"
     type: string
     sql: ${TABLE}.name ;;
+    description: "The name of the item modifier."
   }
 
   dimension: order_line_item_id {
@@ -35,6 +38,7 @@ view: order_line_item_modifier {
     label: "Modifier Total Price"
     type: number
     sql: ${TABLE}.total_price_money ;;
+    description: "Read only The total price of the item modifier for its line item. This is the modifier's base_price_money multiplied by the line item's quantity."
   }
 
   dimension: uid {
@@ -42,6 +46,7 @@ view: order_line_item_modifier {
     value_format_name: id
     hidden: yes
     sql: ${TABLE}.uid ;;
+    description: "Unique ID that identifies the modifier only within this order."
   }
 
   measure: count {

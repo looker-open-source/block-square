@@ -7,6 +7,7 @@ view: tender {
     type: number
     hidden: yes
     sql: ${TABLE}.id ;;
+    description: "The tender's unique ID."
   }
 
   dimension: amount_money {
@@ -14,6 +15,7 @@ view: tender {
     type: number
     sql: ${TABLE}.amount_money ;;
     value_format_name: decimal_2
+    description: "The total amount of the tender, including tip_money. If the tender has a payment_id, the total_money of the corresponding Payment will be equal to the amount_money of the tender."
   }
 
   dimension: card_details_card_brand {
@@ -58,6 +60,63 @@ view: tender {
     sql: ${TABLE}.cash_details_change_back_money ;;
   }
 
+  dimension: customer_id {
+    type: number
+    hidden: yes
+    sql: ${TABLE}.customer_id ;;
+    description: "If the tender is associated with a customer or represents a customer's card on file, this is the ID of the associated customer."
+  }
+
+  dimension: location_id {
+    label: "Tender Location ID"
+    type: number
+    sql: ${TABLE}.location_id ;;
+    description: "The ID of the transaction's associated location."
+  }
+
+  dimension: note {
+    label: "Tender Note"
+    type: string
+    sql: ${TABLE}.note ;;
+    description: "An optional note associated with the tender at the time of payment."
+  }
+
+  dimension: order_id {
+    type: number
+    hidden: yes
+    sql: ${TABLE}.order_id ;;
+  }
+
+  dimension: processing_fee_money {
+    label: "Square Processing Fee"
+    description: "The amount of any Square processing fees applied to the tender."
+    type: number
+    sql: ${TABLE}.processing_fee_money ;;
+    value_format_name: decimal_2
+  }
+
+  dimension: tip_money {
+    label: "Tender Tip Amount"
+    type: number
+    sql: ${TABLE}.tip_money ;;
+    value_format_name: decimal_2
+    description: "The tip's amount of the tender."
+  }
+
+  dimension: transaction_id {
+    type: number
+    hidden: yes
+    sql: ${TABLE}.transaction_id ;;
+    description: "The ID of the tender's associated transaction."
+  }
+
+  dimension: type {
+    label: "Tender Type"
+    type: string
+    sql: ${TABLE}.type ;;
+    description: "The type of tender, such as CARD or CASH."
+  }
+
   dimension_group: created {
     label: "Tender Created At"
     type: time
@@ -75,57 +134,6 @@ view: tender {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.created_at ;;
-  }
-
-  dimension: customer_id {
-    type: number
-    hidden: yes
-    sql: ${TABLE}.customer_id ;;
-  }
-
-  dimension: location_id {
-    label: "Tender Location ID"
-    type: number
-    sql: ${TABLE}.location_id ;;
-  }
-
-  dimension: note {
-    label: "Tender Note"
-    type: string
-    sql: ${TABLE}.note ;;
-  }
-
-  dimension: order_id {
-    type: number
-    hidden: yes
-    sql: ${TABLE}.order_id ;;
-  }
-
-  dimension: processing_fee_money {
-    label: "Square Processing Fee"
-    description: "The amount of any Square processing fees applied to the tender. This field is not immediately populated when a new transaction is created. It is usually available after about ten seconds."
-    type: number
-    sql: ${TABLE}.processing_fee_money ;;
-    value_format_name: decimal_2
-  }
-
-  dimension: tip_money {
-    label: "Tender Tip Amount"
-    type: number
-    sql: ${TABLE}.tip_money ;;
-    value_format_name: decimal_2
-  }
-
-  dimension: transaction_id {
-    type: number
-    hidden: yes
-    sql: ${TABLE}.transaction_id ;;
-  }
-
-  dimension: type {
-    label: "Tender Type"
-    type: string
-    sql: ${TABLE}.type ;;
   }
 
   measure: revenue {
@@ -152,7 +160,6 @@ view: tender {
     value_format_name: decimal_2
   }
 
-  # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
       id,

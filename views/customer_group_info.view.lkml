@@ -7,12 +7,13 @@ view: customer_group_info {
     hidden: yes
     type: number
     sql: ${TABLE}.id ;;
+    description: "The ID of the customer group."
   }
 
   dimension: name {
     label: "Group Name"
     type: string
     sql: ${TABLE}.name ;;
+    description: "The name of the customer group."
   }
-
 }

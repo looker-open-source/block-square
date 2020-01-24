@@ -9,13 +9,11 @@ view: customer_card {
 
   dimension: card_id {
     type: number
-    # hidden: yes
     sql: ${TABLE}.card_id ;;
   }
 
   dimension: customer_id {
     type: number
-    # hidden: yes
     sql: ${TABLE}.customer_id ;;
   }
 
@@ -24,7 +22,6 @@ view: customer_card {
     drill_fields: [detail*]
   }
 
-  # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
       customer.given_name,

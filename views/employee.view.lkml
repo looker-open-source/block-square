@@ -6,6 +6,28 @@ view: employee {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+    description: "UUID for this object."
+  }
+
+  dimension: first_name {
+    label: "Employee First Name"
+    type: string
+    sql: ${TABLE}.first_name ;;
+    description: "The employee's first name."
+  }
+
+  dimension: last_name {
+    label: "Employee Last Name"
+    type: string
+    sql: ${TABLE}.last_name ;;
+    description: "The employee's last name."
+  }
+
+  dimension: status {
+    label: "Employee Status"
+    type: yesno
+    sql: ${TABLE}.status ;;
+    description: "Specifies the status of the employees being fetched."
   }
 
   dimension_group: created {
@@ -22,24 +44,6 @@ view: employee {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.created_at ;;
-  }
-
-  dimension: first_name {
-    label: "Employee First Name"
-    type: string
-    sql: ${TABLE}.first_name ;;
-  }
-
-  dimension: last_name {
-    label: "Employee Last Name"
-    type: string
-    sql: ${TABLE}.last_name ;;
-  }
-
-  dimension: status {
-    label: "Employee Status"
-    type: yesno
-    sql: ${TABLE}.status ;;
   }
 
   dimension_group: updated {

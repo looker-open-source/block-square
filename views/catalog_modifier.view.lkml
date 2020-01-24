@@ -12,12 +12,14 @@ view: catalog_modifier {
     label: "Modifier Name"
     type: string
     sql: ${TABLE}.name ;;
+    description: "The modifier name. Searchable. This field has max length of 255 Unicode code points."
   }
 
   dimension: price_money {
     label: "Modifier Price"
     type: number
     sql: ${TABLE}.price_money ;;
+    description: "The modifier price."
   }
 
   measure: count {

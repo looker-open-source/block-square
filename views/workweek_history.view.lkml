@@ -6,6 +6,19 @@ view: workweek_history {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+    description: "UUID for this object"
+  }
+
+  dimension: start_of_week {
+    type: string
+    sql: ${TABLE}.start_of_week ;;
+    description: "The day of the week on which a business week cuts over for compensation purposes."
+  }
+
+  dimension: version {
+    type: number
+    sql: ${TABLE}.version ;;
+    description: "Used for resolving concurrency issues; request will fail if version provided does not match server version at time of request. If not provided, Square executes a blind write; potentially overwriting data from another write."
   }
 
   dimension_group: created {
@@ -38,11 +51,6 @@ view: workweek_history {
     sql: ${TABLE}.start_of_day_local_time ;;
   }
 
-  dimension: start_of_week {
-    type: string
-    sql: ${TABLE}.start_of_week ;;
-  }
-
   dimension_group: updated {
     type: time
     timeframes: [
@@ -56,11 +64,6 @@ view: workweek_history {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.Updated_at ;;
-  }
-
-  dimension: version {
-    type: number
-    sql: ${TABLE}.version ;;
   }
 
   measure: count {

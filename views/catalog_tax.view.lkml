@@ -5,12 +5,14 @@ view: catalog_tax {
     label: "Tax Applies to Custom Amounts?"
     type: yesno
     sql: ${TABLE}.applies_to_custom_amounts ;;
+    description: "If true, the fee applies to custom amounts entered into the Square Point of Sale app that are not associated with a particular CatalogItem."
   }
 
   dimension: calculation_phase {
     label: "Tax Calculation Phase"
     type: string
     sql: ${TABLE}.calculation_phase ;;
+    description: "Whether the tax is calculated based on a payment's subtotal or total."
   }
 
   dimension: catalog_object_id {
@@ -24,24 +26,28 @@ view: catalog_tax {
     label: "Tax Enabled?"
     type: yesno
     sql: ${TABLE}.enabled ;;
+    description: "If true, the tax will be shown as enabled in the Square Point of Sale app."
   }
 
   dimension: inclusion_type {
     label: "Tax Inclusion Type"
     type: string
     sql: ${TABLE}.inclusion_type ;;
+    description: "Whether the tax is ADDITIVE or INCLUSIVE."
   }
 
   dimension: name {
     label: "Tax Name"
     type: string
     sql: ${TABLE}.name ;;
+    description: "The tax's name. Searchable. This field has max length of 255 Unicode code points."
   }
 
   dimension: percentage {
     label: "Tax Percentage"
     type: number
     sql: ${TABLE}.percentage ;;
+    description: "The percentage of the tax in decimal form, using a '.' as the decimal separator and without a '%' sign. A value of 7.5 corresponds to 7.5%."
   }
 
   measure: count {

@@ -10,6 +10,7 @@ view: order_return {
   dimension: source_order_id {
     type: number
     sql: ${TABLE}.source_order_id ;;
+    description: "Order which contains the original sale of these returned line items. This will be unset for unlinked returns."
   }
 
   dimension: uid {
@@ -17,6 +18,7 @@ view: order_return {
     value_format_name: id
     hidden: yes
     sql: ${TABLE}.uid ;;
+    description: "Unique ID that identifies the return only within this order."
   }
 
   measure: count {

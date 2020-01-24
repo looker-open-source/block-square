@@ -12,11 +12,41 @@ view: break_type {
     hidden: yes
     type: number
     sql: ${TABLE}.id ;;
+    description: "UUID for this object."
   }
 
   dimension: break_name {
     type: string
     sql: ${TABLE}.break_name ;;
+    description: "A human-readable name for this type of break. Will be displayed to employees in Square products."
+  }
+
+  dimension: expected_duration {
+    label: "Break Expected Duration"
+    type: number
+    sql: ${TABLE}.expected_duration ;;
+    description: "Format: RFC-3339 P[n]Y[n]M[n]DT[n]H[n]M[n]S. The expected length of this break. Precision below minutes is truncated."
+  }
+
+  dimension: is_paid {
+    label: "Break Is Paid?"
+    type: yesno
+    sql: ${TABLE}.is_paid ;;
+    description: "Whether this break counts towards time worked for compensation purposes."
+  }
+
+  dimension: location_id {
+    hidden: yes
+    type: number
+    sql: ${TABLE}.location_id ;;
+    description: "The ID of the business location this type of break applies to."
+  }
+
+  dimension: version {
+    label: "Break Version"
+    type: number
+    sql: ${TABLE}.version ;;
+    description: "Used for resolving concurrency issues; request will fail if version provided does not match server version at time of request. If a value is not provided, Square's servers execute a "blind" write; potentially  overwriting another writer's data."
   }
 
   dimension_group: created {
@@ -35,24 +65,6 @@ view: break_type {
     sql: ${TABLE}.created_at ;;
   }
 
-  dimension: expected_duration {
-    label: "Break Expected Duration"
-    type: number
-    sql: ${TABLE}.expected_duration ;;
-  }
-
-  dimension: is_paid {
-    label: "Break Is Paid?"
-    type: yesno
-    sql: ${TABLE}.is_paid ;;
-  }
-
-  dimension: location_id {
-    hidden: yes
-    type: number
-    sql: ${TABLE}.location_id ;;
-  }
-
   dimension_group: updated {
     label: "Break Updated At"
     type: time
@@ -68,11 +80,4 @@ view: break_type {
     datatype: date
     sql: ${TABLE}.updated_at ;;
   }
-
-  dimension: version {
-    label: "Break Version"
-    type: number
-    sql: ${TABLE}.version ;;
-  }
-
 }

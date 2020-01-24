@@ -11,18 +11,21 @@ view: item_variation_location_override {
     label: "Location Variant Override Alert Threshold"
     type: number
     sql: ${TABLE}.inventory_alert_threshold ;;
+    description: "If the inventory quantity for the variation is less than or equal to this value and inventory_alert_type is LOW_QUANTITY, the variation displays an alert in the merchant dashboard."
   }
 
   dimension: inventory_alert_type {
     label: "Location Variant Override Alert Type"
     type: string
     sql: ${TABLE}.Inventory_alert_type ;;
+    description: "Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold."
   }
 
   dimension: item_id {
     type: number
     hidden: yes
     sql: ${TABLE}.item_id ;;
+    description: "The ID of the CatalogItem associated with this item variation. Searchable."
   }
 
   dimension: item_name {
@@ -41,18 +44,20 @@ view: item_variation_location_override {
     label: "Location Variant Override Price"
     type: number
     sql: ${TABLE}.price_money ;;
+    description: "The item variation's price, if fixed pricing is used."
   }
 
   dimension: pricing_type {
     label: "Location Variant Override Pricing Type"
     type: string
     sql: ${TABLE}.pricing_type ;;
+    description: "Indicates whether the item variation's price is fixed or determined at the time of sale."
   }
 
   dimension: track_inventory {
     label: "Location Variant Override Track Inventory?"
     type: yesno
     sql: ${TABLE}.Track_inventory ;;
+    description: "If true, inventory tracking is active for the variation."
   }
-
 }

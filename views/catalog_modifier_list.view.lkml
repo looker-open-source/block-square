@@ -12,12 +12,13 @@ view: catalog_modifier_list {
     label: "Modifier List Name"
     type: string
     sql: ${TABLE}.name ;;
+    description: "A searchable name for the CatalogModifierList. This field has max length of 255 Unicode code points."
   }
 
   dimension: selection_type {
     label: "Modifier List Selection Type"
     type: string
     sql: ${TABLE}.selection_type ;;
+    description: "Indicates whether multiple options from the CatalogModifierList can be applied to a single CatalogItem."
   }
-
 }

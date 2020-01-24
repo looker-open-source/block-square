@@ -11,6 +11,7 @@ view: additional_recipient_refund {
     label: "Additional Recipient Refund Amount"
     type: number
     sql: ${TABLE}.amount_money ;;
+    description: "The amount of the refund. This will always be non-negative."
   }
 
   dimension: description {
@@ -35,12 +36,13 @@ view: additional_recipient_refund {
     type: number
     hidden: yes
     sql: ${TABLE}.receivable_id ;;
+    description: "The ID of the receivable that the refund was applied to."
   }
 
   dimension: refund_id {
     type: number
     hidden: yes
     sql: ${TABLE}.refund_id ;;
+    description: "The ID of the refund that is associated to this receivable refund."
   }
-
 }

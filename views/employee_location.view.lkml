@@ -18,5 +18,4 @@ view: employee_location {
     type: number
     sql: ${TABLE}.location_id ;;
   }
-
 }

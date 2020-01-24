@@ -9,7 +9,6 @@ view: customer_group_association {
 
   dimension: customer_id {
     type: number
-    # hidden: yes
     sql: ${TABLE}.customer_id ;;
   }
 

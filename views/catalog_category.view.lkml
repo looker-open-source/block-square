@@ -12,6 +12,7 @@ view: catalog_category {
     label: "Category Name"
     type: string
     sql: ${TABLE}.name ;;
+    description: "The category name. Searchable. This field has max length of 255 Unicode code points."
   }
 
   measure: count {

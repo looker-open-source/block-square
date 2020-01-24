@@ -11,24 +11,28 @@ view: tender_additional_recipient {
     label: "Additional Recipient Amount"
     type: number
     sql: ${TABLE}.amount_money ;;
+    description: "The amount of money distributed to the recipient."
   }
 
   dimension: description {
     label: "Additional Recipient Description"
     type: string
     sql: ${TABLE}.description ;;
+    description: "The description of the additional recipient."
   }
 
   dimension: location_id {
     type: number
     hidden: yes
     sql: ${TABLE}.location_id ;;
+    description: "The location ID for a recipient (other than the merchant) receiving a portion of this tender."
   }
 
   dimension: receivable_id {
     type: number
     hidden: yes
     sql: ${TABLE}.receivable_id ;;
+    description: "The unique ID for this AdditionalRecipientReceivable, assigned by the server."
   }
 
   dimension: tender_id {
@@ -36,5 +40,4 @@ view: tender_additional_recipient {
     hidden: yes
     sql: ${TABLE}.tender_id ;;
   }
-
 }
