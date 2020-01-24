@@ -56,6 +56,7 @@ view: inventory_count_history {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.calculated_at ;;
+    description: "A read-only timestamp in RFC 3339 format that indicates when Square received the most recent physical count or adjustment that had an affect on the estimated count."
   }
 
   measure: total_quantity {

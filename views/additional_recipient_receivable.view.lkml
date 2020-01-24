@@ -33,7 +33,7 @@ view: additional_recipient_receivable {
 
   dimension_group: created {
     label: "Additional Receivable Created At"
-    description: "The time when the additional recipient receivable was created"
+    description: "The time when the additional recipient receivable was created, in RFC 3339 format."
     type: time
     timeframes: [
       raw,

@@ -67,6 +67,7 @@ view: catalog_object {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.updated_at ;;
+    description: "Last modification timestamp in RFC 3339 format, e.g., \"2016-08-15T23:59:33.123Z\" would indicate the UTC time (denoted by Z) of August 15, 2016 at 23:59:33 and 123 milliseconds."
   }
 
   set: detail {

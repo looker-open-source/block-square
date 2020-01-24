@@ -90,6 +90,7 @@ view: customer {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.birthday ;;
+    description: "The birthday associated with the customer profile, in RFC-3339 format. Year is optional, timezone and times are not allowed. For example: 0000-09-01T00:00:00-00:00 indicates a birthday on September 1st. 1998-09-01T00:00:00-00:00 indications a birthday on September 1st 1998."
   }
 
   dimension_group: created {
@@ -108,6 +109,7 @@ view: customer {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.created_at ;;
+    description: "The time when the customer profile was created, in RFC 3339 format."
   }
 
   dimension_group: updated {
@@ -123,6 +125,7 @@ view: customer {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.updated_at ;;
+    description: "The time when the customer profile was last updated, in RFC 3339 format."
   }
 
   dimension_group: cohort_age {

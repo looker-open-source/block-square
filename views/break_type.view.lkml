@@ -63,6 +63,7 @@ view: break_type {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.created_at ;;
+    description: "A read-only timestamp in RFC 3339 format."
   }
 
   dimension_group: updated {
@@ -79,5 +80,6 @@ view: break_type {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.updated_at ;;
+    description: "A read-only timestamp in RFC 3339 format."
   }
 }

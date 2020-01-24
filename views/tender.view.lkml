@@ -134,6 +134,7 @@ view: tender {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.created_at ;;
+    description: "The time when the tender was created, in RFC 3339 format."
   }
 
   measure: revenue {

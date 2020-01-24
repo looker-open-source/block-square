@@ -52,5 +52,6 @@ view: additional_recipient_receivable_refund {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.created_at ;;
+    description: "The time when the additional recipient receivable was created, in RFC 3339 format."
   }
 }

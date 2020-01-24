@@ -34,6 +34,7 @@ view: workweek_history {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.Created_at ;;
+    description: "A read-only timestamp in RFC 3339 format; presented in UTC"
   }
 
   dimension_group: start_of_day_local {
@@ -49,6 +50,7 @@ view: workweek_history {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.start_of_day_local_time ;;
+    description: "The local time at which a business week cuts over. Represented as a string in HH:MM format (HH:MM:SS is also accepted, but seconds are truncated)."
   }
 
   dimension_group: updated {
@@ -64,6 +66,7 @@ view: workweek_history {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.Updated_at ;;
+    description: "A read-only timestamp in RFC 3339 format; presented in UTC"
   }
 
   measure: count {

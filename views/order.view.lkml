@@ -94,6 +94,7 @@ view: order {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.closed_at ;;
+    description: "Timestamp for when the order was closed. In RFC 3339 format."
   }
 
   dimension_group: created {
@@ -112,6 +113,7 @@ view: order {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.created_at ;;
+    description: "Timestamp for when the order was created. In RFC 3339 format."
   }
 
   dimension_group: updated {
@@ -127,6 +129,8 @@ view: order {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.updated_at ;;
+    description: "Timestamp for when the order was last updated. In RFC 3339 format."
+
   }
 
   measure: avg_open {
