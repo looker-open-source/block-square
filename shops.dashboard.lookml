@@ -45,7 +45,7 @@
     model: block-square
     explore: order
     type: looker_grid
-    fields: [order.count, location.id, location.zipcode]
+    fields: [order.count, location.id]
     sorts: [order.count desc]
     limit: 500
     column_limit: 50

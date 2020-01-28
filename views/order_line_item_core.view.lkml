@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/order_line_item.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/order_line_item.view.lkml"
 
 view: order_line_item {
   extends: [order_line_item_config]
 }
 
-view: order_line_item {
+view: order_line_item_core {
   sql_table_name: Square.ORDER_LINE_ITEM ;;
 
   dimension: pk {

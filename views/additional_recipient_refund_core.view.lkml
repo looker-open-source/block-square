@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/additional_recipient_refund.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/additional_recipient_refund.view.lkml"
 
 view: additional_recipient_refund {
   extends: [additional_recipient_refund_config]
 }
 
-view: additional_recipient_refund {
+view: additional_recipient_refund_core {
   sql_table_name: Square.ADDITIONAL_RECIPIENT_REFUND ;;
 
   dimension: pk {

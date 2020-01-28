@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/item_variation_location_override.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/item_variation_location_override.view.lkml"
 
 view: item_variation_location_override {
   extends: [item_variation_location_override_config]
 }
 
-view: item_variation_location_override {
+view: item_variation_location_override_core {
   sql_table_name: Square.ITEM_VARIATION_LOCATION_OVERRIDE ;;
 
   dimension: pk {

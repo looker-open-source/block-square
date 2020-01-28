@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/location.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/location.view.lkml"
 
 view: location {
   extends: [location_config]
 }
 
-view: location {
+view: location_core {
   sql_table_name: Square.LOCATION ;;
   drill_fields: [id]
 

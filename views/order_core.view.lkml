@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/order.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/order.view.lkml"
 
 view: order {
   extends: [order_config]
 }
 
-view: order {
+view: order_core {
   sql_table_name: Square.`ORDER` ;;
   drill_fields: [id]
 

@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/catalog_tax.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/catalog_tax.view.lkml"
 
 view: catalog_tax {
   extends: [catalog_tax_config]
 }
 
-view: catalog_tax {
+view: catalog_tax_core {
   sql_table_name: Square.CATALOG_TAX ;;
 
   dimension: applies_to_custom_amounts {

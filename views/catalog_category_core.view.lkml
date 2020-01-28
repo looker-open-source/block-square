@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/catalog_category.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/catalog_category.view.lkml"
 
 view: catalog_category {
   extends: [catalog_category_config]
 }
 
-view: catalog_category {
+view: catalog_category_core {
   sql_table_name: Square.CATALOG_CATEGORY ;;
 
   dimension: catalog_object_id {

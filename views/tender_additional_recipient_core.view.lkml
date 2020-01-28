@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/tender_additional_recipient.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/tender_additional_recipient.view.lkml"
 
 view: tender_additional_recipient {
   extends: [tender_additional_recipient_config]
 }
 
-view: tender_additional_recipient {
+view: tender_additional_recipient_core {
   sql_table_name: Square.TENDER_ADDITIONAL_RECIPIENT ;;
 
   dimension: pk {

@@ -1,24 +1,28 @@
-project_name: "block-block-square"
-  
+project_name: "block-square"
+
 ################ Constants ################
 
 constant: CONFIG_PROJECT_NAME {
-  value: "block-block-square-config"
+  value: "block-square-config"
   export: override_required
 }
 
 constant: CONNECTION_NAME {
-  value: "choose connection"
+  value: "static_data"
   export: override_required
 }
 
-### If needed TODO Add more constants here
+constant: SCHEMA_NAME {
+  value: "Square"
+  export: override_required
+}
 
 ################ Dependencies ################
 
 local_dependency: {
   project: "@{CONFIG_PROJECT_NAME}"
 
-  #### If needed TODO Add CONFIG constants here that we want overridden by CORE constants
-
+  override_constant: SCHEMA_NAME {
+    value: "@{SCHEMA_NAME}"
+  }
 }

@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/catalog_item_modifier_list_info.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/catalog_item_modifier_list_info.view.lkml"
 
 view: catalog_item_modifier_list_info {
   extends: [catalog_item_modifier_list_info_config]
 }
 
-view: catalog_item_modifier_list_info {
+view: catalog_item_modifier_list_info_core {
   sql_table_name: Square.CATALOG_ITEM_MODIFIER_LIST_INFO ;;
 
   dimension: pk {

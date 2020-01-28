@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/catalog_location.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/catalog_location.view.lkml"
 
 view: catalog_location {
   extends: [catalog_location_config]
 }
 
-view: catalog_location {
+view: catalog_location_core {
   sql_table_name: Square.CATALOG_LOCATION ;;
 
   dimension: pk {

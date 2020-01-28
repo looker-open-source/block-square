@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/inventory_count_history.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/inventory_count_history.view.lkml"
 
 view: inventory_count_history {
   extends: [inventory_count_history_config]
 }
 
-view: inventory_count_history {
+view: inventory_count_history_core {
   sql_table_name: Square.INVENTORY_COUNT_HISTORY ;;
 
   dimension: pk {

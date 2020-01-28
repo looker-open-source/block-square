@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/order_service_charge.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/order_service_charge.view.lkml"
 
 view: order_service_charge {
   extends: [order_service_charge_config]
 }
 
-view: order_service_charge {
+view: order_service_charge_core {
   sql_table_name: Square.ORDER_SERVICE_CHARGE ;;
 
   dimension: pk {

@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/catalog_discount.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/catalog_discount.view.lkml"
 
 view: catalog_discount {
   extends: [catalog_discount_config]
 }
 
-view: catalog_discount {
+view: catalog_discount_core {
   sql_table_name: Square.CATALOG_DISCOUNT ;;
 
   dimension: amount_money {

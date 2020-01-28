@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/workweek_history.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/workweek_history.view.lkml"
 
 view: workweek_history {
   extends: [workweek_history_config]
 }
 
-view: workweek_history {
+view: workweek_history_core {
   sql_table_name: Square.WORKWEEK_HISTORY ;;
   drill_fields: [id]
 

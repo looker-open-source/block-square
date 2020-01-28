@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/tender.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/tender.view.lkml"
 
 view: tender {
   extends: [tender_config]
 }
 
-view: tender {
+view: tender_core {
   sql_table_name: Square.TENDER ;;
   drill_fields: [id]
 

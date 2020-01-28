@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/refund.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/refund.view.lkml"
 
 view: refund {
   extends: [refund_config]
 }
 
-view: refund {
+view: refund_core {
   sql_table_name: Square.REFUND ;;
   drill_fields: [id]
 

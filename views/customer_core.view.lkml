@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/customer.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/customer.view.lkml"
 
 view: customer {
   extends: [customer_config]
 }
 
-view: customer {
+view: customer_core {
   sql_table_name: Square.CUSTOMER ;;
   drill_fields: [id]
 

@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/employee_location.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/employee_location.view.lkml"
 
 view: employee_location {
   extends: [employee_location_config]
 }
 
-view: employee_location {
+view: employee_location_core {
   sql_table_name: Square.EMPLOYEE_LOCATION ;;
 
   dimension: pk {

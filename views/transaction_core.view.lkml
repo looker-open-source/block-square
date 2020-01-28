@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/transaction.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/transaction.view.lkml"
 
 view: transaction {
   extends: [transaction_config]
 }
 
-view: transaction {
+view: transaction_core {
   sql_table_name: Square.TRANSACTION ;;
   drill_fields: [id]
 

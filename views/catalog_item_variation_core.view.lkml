@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/catalog_item_variation.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/catalog_item_variation.view.lkml"
 
 view: catalog_item_variation {
   extends: [catalog_item_variation_config]
 }
 
-view: catalog_item_variation {
+view: catalog_item_variation_core {
   sql_table_name: Square.CATALOG_ITEM_VARIATION ;;
 
   dimension: pk {

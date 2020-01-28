@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/customer_group_association.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/customer_group_association.view.lkml"
 
 view: customer_group_association {
   extends: [customer_group_association_config]
 }
 
-view: customer_group_association {
+view: customer_group_association_core {
   sql_table_name: Square.CUSTOMER_GROUP_ASSOCIATION ;;
 
   dimension: pk {

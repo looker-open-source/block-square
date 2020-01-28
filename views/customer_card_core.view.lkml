@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/customer_card.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/customer_card.view.lkml"
 
 view: customer_card {
   extends: [customer_card_config]
 }
 
-view: customer_card {
+view: customer_card_core {
   sql_table_name: Square.CUSTOMER_CARD ;;
 
   dimension: pk {

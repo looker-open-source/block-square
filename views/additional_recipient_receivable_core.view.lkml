@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/additional_recipient_receivable.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/additional_recipient_receivable.view.lkml"
 
 view: additional_recipient_receivable {
   extends: [additional_recipient_receivable_config]
 }
 
-view: additional_recipient_receivable {
+view: additional_recipient_receivable_core {
   sql_table_name: Square.ADDITIONAL_RECIPIENT_RECEIVABLE ;;
   drill_fields: [id]
 

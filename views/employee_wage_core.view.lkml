@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/employee_wage.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/employee_wage.view.lkml"
 
 view: employee_wage {
   extends: [employee_wage_config]
 }
 
-view: employee_wage {
+view: employee_wage_core {
   sql_table_name: Square.EMPLOYEE_WAGE ;;
   drill_fields: [id]
 

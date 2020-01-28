@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/catalog_item_modifier_override.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/catalog_item_modifier_override.view.lkml"
 
 view: catalog_item_modifier_override {
   extends: [catalog_item_modifier_override_config]
 }
 
-view: catalog_item_modifier_override {
+view: catalog_item_modifier_override_core {
   sql_table_name: Square.CATALOG_ITEM_MODIFIER_OVERRIDE ;;
 
   dimension: pk {

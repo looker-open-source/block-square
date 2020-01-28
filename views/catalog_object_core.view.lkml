@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/catalog_object.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/catalog_object.view.lkml"
 
 view: catalog_object {
   extends: [catalog_object_config]
 }
 
-view: catalog_object {
+view: catalog_object_core {
   sql_table_name: Square.CATALOG_OBJECT ;;
   drill_fields: [id]
 

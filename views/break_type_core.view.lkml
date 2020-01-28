@@ -1,10 +1,10 @@
-include: "//@{CONFIG_PROJECT_NAME}/break_type.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*/break_type.view.lkml"
 
 view: break_type {
   extends: [break_type_config]
 }
 
-view: break_type {
+view: break_type_core {
   sql_table_name: Square.BREAK_TYPE ;;
   drill_fields: [id]
 
