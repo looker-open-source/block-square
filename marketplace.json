@@ -2,7 +2,7 @@
   "label": "Square",
   "category_label": "Models",
   "branding": {
-    "image_uri": "https://marketplace-api.looker.com/block-icons/stitch_icon.png",
+    "image_uri": "https://marketplace-api.looker.com/block-icons/square_icon.png",
     "tagline": "Understand more about how your customers pay with the Square block."
   },
 
@@ -27,7 +27,7 @@
   "auxiliary_projects": [
     {
       "git_uri": "git://github.com/looker/block-square-config.git",
-      "git_ref": "f92334349735570f0c951af0934716d16540795f",
+      "git_ref": "0ab20a25ef0668e6ae2978764537580aec58cd0a",
       "label": "Square Config",
       "constant_name": "CONFIG_PROJECT_NAME"
     }

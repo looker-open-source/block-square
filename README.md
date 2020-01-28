@@ -1,4 +1,4 @@
-# block-square
+# Square Block Core
 
 #### Understand more about how your customers pay with the Square block.
 
