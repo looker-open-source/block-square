@@ -5,7 +5,7 @@ view: catalog_location {
 }
 
 view: catalog_location_core {
-  sql_table_name: Square.CATALOG_LOCATION ;;
+  sql_table_name: @{SCHEMA_NAME}.CATALOG_LOCATION ;;
 
   dimension: pk {
     hidden: yes

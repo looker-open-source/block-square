@@ -5,7 +5,7 @@ view: order_return_line_item_modifier {
 }
 
 view: order_return_line_item_modifier_core {
-  sql_table_name: Square.ORDER_RETURN_LINE_ITEM_MODIFIER ;;
+  sql_table_name: @{SCHEMA_NAME}.ORDER_RETURN_LINE_ITEM_MODIFIER ;;
 
   dimension: pk {
     hidden: yes

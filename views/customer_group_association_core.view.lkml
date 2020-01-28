@@ -5,7 +5,7 @@ view: customer_group_association {
 }
 
 view: customer_group_association_core {
-  sql_table_name: Square.CUSTOMER_GROUP_ASSOCIATION ;;
+  sql_table_name: @{SCHEMA_NAME}.CUSTOMER_GROUP_ASSOCIATION ;;
 
   dimension: pk {
     hidden: yes

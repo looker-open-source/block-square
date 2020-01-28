@@ -5,7 +5,7 @@ view: inventory_count_history {
 }
 
 view: inventory_count_history_core {
-  sql_table_name: Square.INVENTORY_COUNT_HISTORY ;;
+  sql_table_name: @{SCHEMA_NAME}.INVENTORY_COUNT_HISTORY ;;
 
   dimension: pk {
     hidden: yes

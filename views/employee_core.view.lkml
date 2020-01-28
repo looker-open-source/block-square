@@ -5,7 +5,7 @@ view: employee {
 }
 
 view: employee_core {
-  sql_table_name: Square.EMPLOYEE ;;
+  sql_table_name: @{SCHEMA_NAME}.EMPLOYEE ;;
   drill_fields: [id]
 
   dimension: id {

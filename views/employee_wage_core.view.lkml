@@ -5,7 +5,7 @@ view: employee_wage {
 }
 
 view: employee_wage_core {
-  sql_table_name: Square.EMPLOYEE_WAGE ;;
+  sql_table_name: @{SCHEMA_NAME}.EMPLOYEE_WAGE ;;
   drill_fields: [id]
 
   dimension: pk {

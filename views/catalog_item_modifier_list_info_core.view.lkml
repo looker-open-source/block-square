@@ -5,7 +5,7 @@ view: catalog_item_modifier_list_info {
 }
 
 view: catalog_item_modifier_list_info_core {
-  sql_table_name: Square.CATALOG_ITEM_MODIFIER_LIST_INFO ;;
+  sql_table_name: @{SCHEMA_NAME}.CATALOG_ITEM_MODIFIER_LIST_INFO ;;
 
   dimension: pk {
     hidden: yes

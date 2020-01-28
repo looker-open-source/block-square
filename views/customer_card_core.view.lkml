@@ -5,7 +5,7 @@ view: customer_card {
 }
 
 view: customer_card_core {
-  sql_table_name: Square.CUSTOMER_CARD ;;
+  sql_table_name: @{SCHEMA_NAME}.CUSTOMER_CARD ;;
 
   dimension: pk {
     hidden: yes

@@ -5,7 +5,7 @@ view: catalog_modifier_list {
 }
 
 view: catalog_modifier_list_core {
-  sql_table_name: Square.CATALOG_MODIFIER_LIST ;;
+  sql_table_name: @{SCHEMA_NAME}.CATALOG_MODIFIER_LIST ;;
 
   dimension: catalog_object_id {
     type: number

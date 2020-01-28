@@ -5,7 +5,7 @@ view: order_line_item_tax {
 }
 
 view: order_line_item_tax_core {
-  sql_table_name: Square.ORDER_LINE_ITEM_TAX ;;
+  sql_table_name: @{SCHEMA_NAME}.ORDER_LINE_ITEM_TAX ;;
 
   dimension: pk {
     hidden: yes

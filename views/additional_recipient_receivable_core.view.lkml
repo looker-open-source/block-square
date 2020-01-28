@@ -5,7 +5,7 @@ view: additional_recipient_receivable {
 }
 
 view: additional_recipient_receivable_core {
-  sql_table_name: Square.ADDITIONAL_RECIPIENT_RECEIVABLE ;;
+  sql_table_name: @{SCHEMA_NAME}.ADDITIONAL_RECIPIENT_RECEIVABLE ;;
   drill_fields: [id]
 
   dimension: id {

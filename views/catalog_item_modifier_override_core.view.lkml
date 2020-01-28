@@ -5,7 +5,7 @@ view: catalog_item_modifier_override {
 }
 
 view: catalog_item_modifier_override_core {
-  sql_table_name: Square.CATALOG_ITEM_MODIFIER_OVERRIDE ;;
+  sql_table_name: @{SCHEMA_NAME}.CATALOG_ITEM_MODIFIER_OVERRIDE ;;
 
   dimension: pk {
     hidden: yes

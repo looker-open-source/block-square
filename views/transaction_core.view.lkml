@@ -5,7 +5,7 @@ view: transaction {
 }
 
 view: transaction_core {
-  sql_table_name: Square.TRANSACTION ;;
+  sql_table_name: @{SCHEMA_NAME}.TRANSACTION ;;
   drill_fields: [id]
 
   dimension: id {

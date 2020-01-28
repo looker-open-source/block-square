@@ -5,7 +5,7 @@ view: item_variation_location_override {
 }
 
 view: item_variation_location_override_core {
-  sql_table_name: Square.ITEM_VARIATION_LOCATION_OVERRIDE ;;
+  sql_table_name: @{SCHEMA_NAME}.ITEM_VARIATION_LOCATION_OVERRIDE ;;
 
   dimension: pk {
     hidden: yes

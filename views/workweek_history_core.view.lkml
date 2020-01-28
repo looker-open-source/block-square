@@ -5,7 +5,7 @@ view: workweek_history {
 }
 
 view: workweek_history_core {
-  sql_table_name: Square.WORKWEEK_HISTORY ;;
+  sql_table_name: @{SCHEMA_NAME}.WORKWEEK_HISTORY ;;
   drill_fields: [id]
 
   dimension: id {

@@ -5,7 +5,7 @@ view: catalog_discount {
 }
 
 view: catalog_discount_core {
-  sql_table_name: Square.CATALOG_DISCOUNT ;;
+  sql_table_name: @{SCHEMA_NAME}.CATALOG_DISCOUNT ;;
 
   dimension: amount_money {
     label: "Discount Amount"

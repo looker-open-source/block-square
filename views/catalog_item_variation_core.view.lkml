@@ -5,7 +5,7 @@ view: catalog_item_variation {
 }
 
 view: catalog_item_variation_core {
-  sql_table_name: Square.CATALOG_ITEM_VARIATION ;;
+  sql_table_name: @{SCHEMA_NAME}.CATALOG_ITEM_VARIATION ;;
 
   dimension: pk {
     hidden: yes

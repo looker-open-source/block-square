@@ -5,7 +5,7 @@ view: tender_additional_recipient {
 }
 
 view: tender_additional_recipient_core {
-  sql_table_name: Square.TENDER_ADDITIONAL_RECIPIENT ;;
+  sql_table_name: @{SCHEMA_NAME}.TENDER_ADDITIONAL_RECIPIENT ;;
 
   dimension: pk {
     hidden: yes

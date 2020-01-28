@@ -5,7 +5,7 @@ view: location {
 }
 
 view: location_core {
-  sql_table_name: Square.LOCATION ;;
+  sql_table_name: @{SCHEMA_NAME}.LOCATION ;;
   drill_fields: [id]
 
   dimension: id {

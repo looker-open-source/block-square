@@ -5,7 +5,7 @@ view: additional_recipient_refund {
 }
 
 view: additional_recipient_refund_core {
-  sql_table_name: Square.ADDITIONAL_RECIPIENT_REFUND ;;
+  sql_table_name: @{SCHEMA_NAME}.ADDITIONAL_RECIPIENT_REFUND ;;
 
   dimension: pk {
     hidden: yes

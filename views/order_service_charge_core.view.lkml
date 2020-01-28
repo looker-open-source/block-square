@@ -5,7 +5,7 @@ view: order_service_charge {
 }
 
 view: order_service_charge_core {
-  sql_table_name: Square.ORDER_SERVICE_CHARGE ;;
+  sql_table_name: @{SCHEMA_NAME}.ORDER_SERVICE_CHARGE ;;
 
   dimension: pk {
     hidden: yes

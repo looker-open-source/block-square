@@ -5,7 +5,7 @@ view: catalog_item_tax {
 }
 
 view: catalog_item_tax_core {
-  sql_table_name: Square.CATALOG_ITEM_TAX ;;
+  sql_table_name: @{SCHEMA_NAME}.CATALOG_ITEM_TAX ;;
 
   dimension: pk {
     hidden: yes

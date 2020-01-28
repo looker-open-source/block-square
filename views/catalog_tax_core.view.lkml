@@ -5,7 +5,7 @@ view: catalog_tax {
 }
 
 view: catalog_tax_core {
-  sql_table_name: Square.CATALOG_TAX ;;
+  sql_table_name: @{SCHEMA_NAME}.CATALOG_TAX ;;
 
   dimension: applies_to_custom_amounts {
     label: "Tax Applies to Custom Amounts?"

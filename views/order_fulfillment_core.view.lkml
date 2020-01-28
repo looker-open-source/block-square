@@ -5,7 +5,7 @@ view: order_fulfillment {
 }
 
 view: order_fulfillment_core {
-  sql_table_name: Square.ORDER_FULFILLMENT ;;
+  sql_table_name: @{SCHEMA_NAME}.ORDER_FULFILLMENT ;;
 
   dimension: pk {
     hidden: yes

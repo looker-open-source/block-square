@@ -5,7 +5,7 @@ view: catalog_item {
 }
 
 view: catalog_item_core {
-  sql_table_name: Square.CATALOG_ITEM ;;
+  sql_table_name: @{SCHEMA_NAME}.CATALOG_ITEM ;;
 
   dimension: abbreviation {
     type: string

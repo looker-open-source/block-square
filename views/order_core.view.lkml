@@ -5,7 +5,7 @@ view: order {
 }
 
 view: order_core {
-  sql_table_name: Square.`ORDER` ;;
+  sql_table_name: @{SCHEMA_NAME}.`ORDER` ;;
   drill_fields: [id]
 
   dimension: id {

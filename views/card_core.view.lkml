@@ -5,7 +5,7 @@ view: card {
 }
 
 view: card_core {
-  sql_table_name: Square.CARD ;;
+  sql_table_name: @{SCHEMA_NAME}.CARD ;;
   drill_fields: [id]
 
   dimension: id {

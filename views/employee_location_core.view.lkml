@@ -5,7 +5,7 @@ view: employee_location {
 }
 
 view: employee_location_core {
-  sql_table_name: Square.EMPLOYEE_LOCATION ;;
+  sql_table_name: @{SCHEMA_NAME}.EMPLOYEE_LOCATION ;;
 
   dimension: pk {
     hidden: yes

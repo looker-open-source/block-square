@@ -5,7 +5,7 @@ view: refund {
 }
 
 view: refund_core {
-  sql_table_name: Square.REFUND ;;
+  sql_table_name: @{SCHEMA_NAME}.REFUND ;;
   drill_fields: [id]
 
   dimension: id {

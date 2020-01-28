@@ -5,7 +5,7 @@ view: break_type {
 }
 
 view: break_type_core {
-  sql_table_name: Square.BREAK_TYPE ;;
+  sql_table_name: @{SCHEMA_NAME}.BREAK_TYPE ;;
   drill_fields: [id]
 
   dimension: pk {

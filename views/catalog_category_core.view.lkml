@@ -5,7 +5,7 @@ view: catalog_category {
 }
 
 view: catalog_category_core {
-  sql_table_name: Square.CATALOG_CATEGORY ;;
+  sql_table_name: @{SCHEMA_NAME}.CATALOG_CATEGORY ;;
 
   dimension: catalog_object_id {
     hidden: yes

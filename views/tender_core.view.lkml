@@ -5,7 +5,7 @@ view: tender {
 }
 
 view: tender_core {
-  sql_table_name: Square.TENDER ;;
+  sql_table_name: @{SCHEMA_NAME}.TENDER ;;
   drill_fields: [id]
 
   dimension: id {

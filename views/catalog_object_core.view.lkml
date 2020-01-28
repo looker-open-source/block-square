@@ -5,7 +5,7 @@ view: catalog_object {
 }
 
 view: catalog_object_core {
-  sql_table_name: Square.CATALOG_OBJECT ;;
+  sql_table_name: @{SCHEMA_NAME}.CATALOG_OBJECT ;;
   drill_fields: [id]
 
   dimension: id {
