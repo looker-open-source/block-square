@@ -1,0 +1,35 @@
+{
+  "label": "Square",
+  "category_label": "Models",
+  "branding": {
+    "image_uri": "https://marketplace-api.looker.com/block-icons/jira_icon.png",
+    "tagline": "Analyze and monitor your team's performance with Looker's Jira block"
+  },
+
+  "constants": {
+    "CONNECTION_NAME": {
+      "label": "Connection Name",
+      "value_constraint": "connection"
+    },
+    "SCHEMA_NAME": {
+      "label": "Schema Name"
+    },
+    "CONFIG_PROJECT_NAME": {
+      "label": "Config Project Name"
+    }
+  },
+  "models": [
+    {
+      "name": "block-square",
+      "connection_constant": "CONNECTION_NAME"
+    }
+  ],
+  "auxiliary_projects": [
+    {
+      "git_uri": "git://github.com/looker/block-square-config.git",
+      "git_ref": "629dda968f1f497e8146b75c07871bdbcffd4f5a",
+      "label": "Square Config",
+      "constant_name": "CONFIG_PROJECT_NAME"
+    }
+  ]
+}
