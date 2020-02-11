@@ -27,7 +27,7 @@
   "auxiliary_projects": [
     {
       "git_uri": "git://github.com/looker/block-square-config.git",
-      "git_ref": "0ab20a25ef0668e6ae2978764537580aec58cd0a",
+      "git_ref": "de4c9d4ec3fcdeb376a4f24add465c207341280a",
       "label": "Square Config",
       "constant_name": "CONFIG_PROJECT_NAME"
     }
