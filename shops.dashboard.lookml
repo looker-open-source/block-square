@@ -1,6 +1,7 @@
 - dashboard: shops
   title: Shops
   layout: newspaper
+  preferred_viewer: dashboards-next
   elements:
   - title: Top Customers
     name: Top Customers
