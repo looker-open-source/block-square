@@ -1,6 +1,7 @@
 - dashboard: orders
   title: Orders
   layout: newspaper
+  preferred_viewer: dashboards-next
   elements:
   - title: Untitled (copy)
     name: Untitled (copy)
