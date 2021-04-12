@@ -17,7 +17,3 @@ Looker’s Square block has been built to help you find insights that matter and
 As with other Looker blocks, you can easily customize the data model to fit your business needs. Use the Orders Explore to tailor the included dashboards on Orders, Shops, and Transactions to fit your use case or to create your own dashboards and reports.
 
 Square, Inc. is a financial services, merchant services aggregator, and mobile payment company.
-
-### What if I find an error? Suggestions for improvements?
-
-Great! Blocks were designed for continuous improvement through the help of the entire Looker community and we'd love your input. To report an error or improvement recommendation, please reach out to Looker support via email to support@looker.com or via chat to submit a request. Please be as detailed as possible in your explanation and we'll address it as quick as we can.
